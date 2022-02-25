@@ -1,0 +1,359 @@
+@import url(v:\programming-space-work\Before\Dev prog\real-project\fonts\fontawesome\web-fonts-with-css\css\fontawesome-all.min.css);
+@import url(v:\programming-space-work\Before\Dev prog\real-project\fonts\bootstrap-icons-1.4.1\bootstrap-icons.css);
+@font-face {
+  font-family: 'Niconne';
+  src: url("../fonts/Niconne-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url("../fonts/Nunito/Nunito-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: 'Coiny';
+  src: url("../fonts/Coiny/Coiny-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Caveat';
+  src: url("../fonts/Caveat/Caveat-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: 'Courgette';
+  src: url("../fonts/Courgette/Courgette-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Kalam';
+  src: url("../fonts/Kalam/Kalam-Bold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("../images/WallpaperGram.IR_1554973207_95426.jpg"), rgba(0, 0, 0, 0.2);
+  background-blend-mode: overlay;
+  background-size: 100% 100%;
+}
+
+body header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  font-family: "Nunito", Sans-serif;
+}
+
+body header nav h1 {
+  font-size: 40px;
+  color: #e5ffb4e5;
+  font-family: "Courgette", Sans-serif;
+}
+
+body header nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 10px;
+}
+
+body header nav ul li a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+  color: black;
+  border-radius: 5px;
+  padding: 0 7px;
+  text-decoration: none;
+}
+
+body header nav ul li a::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: -4px;
+  background: #e5ffb4e5;
+  border-radius: 3px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+body header nav ul li a:hover::after {
+  width: 100%;
+}
+
+body header section {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: white;
+}
+
+body header section h1 {
+  font-family: "Courgette", Sans-serif;
+  font-size: 50px;
+  margin: 40px 0;
+}
+
+body header section p {
+  font-family: "Niconne", Sans-serif;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+body header section::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: -webkit-gradient(linear, left top, right top, from(white), color-stop(violet), to(white));
+  background: linear-gradient(to right, white, violet, white);
+  border-radius: 3px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+body header section:hover::after {
+  width: 80%;
+}
+
+body footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  background: #2c2c2c;
+}
+
+body footer .left {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  height: 100%;
+  padding: 40px;
+}
+
+body footer .left textarea {
+  padding: 10px;
+  font-family: "Courgette", Sans-serif;
+  font-size: 22px;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  resize: none;
+}
+
+body footer .left textarea::-webkit-input-placeholder {
+  opacity: 1;
+  color: cornflowerblue;
+}
+
+body footer .left textarea:-ms-input-placeholder {
+  opacity: 1;
+  color: cornflowerblue;
+}
+
+body footer .left textarea::-ms-input-placeholder {
+  opacity: 1;
+  color: cornflowerblue;
+}
+
+body footer .left textarea::placeholder {
+  opacity: 1;
+  color: cornflowerblue;
+}
+
+body footer .left button {
+  padding: 2px 10px;
+  background: cornflowerblue;
+  font-family: "Caveat", Sans-serif;
+  font-size: 20px;
+  position: relative;
+  left: calc(100% - 72px);
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+body footer .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  color: white;
+}
+
+body footer .right .text, body footer .right .copyright {
+  margin: 20px 0;
+}
+
+body footer .right .text {
+  font-family: "Courgette", Sans-serif;
+  font-size: 25px;
+}
+
+body footer .right .media {
+  z-index: 1;
+}
+
+body footer .right .media div {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+body footer .right .media div:hover {
+  color: white;
+}
+
+body footer .right .media div:hover span {
+  top: -50%;
+  opacity: 1;
+  overflow: visible;
+}
+
+body footer .right .media div:hover.facebook {
+  background: #3b5998;
+}
+
+body footer .right .media div:hover.github {
+  background: black;
+}
+
+body footer .right .media div:hover.instagram {
+  background: #9b1950;
+}
+
+body footer .right .media div:hover.telegram {
+  background: #2670ae;
+}
+
+body footer .right .media div:hover.whatsapp {
+  background: #257e78;
+}
+
+body footer .right .media div i {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+  font-size: 25px;
+  line-height: 50px;
+  text-align: center;
+}
+
+body footer .right .media div span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: "Niconne", Sans-serif;
+  font-size: 20px;
+  padding: 2px 10px;
+  background: inherit;
+  border-radius: 100px;
+  -webkit-transition: top 0.3s cubic-bezier(0.63, 0.65, 0.28, 1.33), opacity 0.3s cubic-bezier(0.63, 0.65, 0.28, 1.33), overflow 0.3s cubic-bezier(0.63, 0.65, 0.28, 1.33);
+  transition: top 0.3s cubic-bezier(0.63, 0.65, 0.28, 1.33), opacity 0.3s cubic-bezier(0.63, 0.65, 0.28, 1.33), overflow 0.3s cubic-bezier(0.63, 0.65, 0.28, 1.33);
+  z-index: -10;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+body footer .right .media div span::before {
+  position: absolute;
+  content: "";
+  width: 11px;
+  height: 11px;
+  bottom: 0;
+  left: 50%;
+  background: inherit;
+  -webkit-transform: translate(-50%, 50%) rotateZ(45deg);
+          transform: translate(-50%, 50%) rotateZ(45deg);
+}
+
+body footer .right .copyright {
+  position: relative;
+  font-family: "Nunito", Sans-serif;
+  font-size: 18px;
+  z-index: 2;
+}
+
+body footer .right .copyright i {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 120px;
+  opacity: .2;
+  z-index: 1;
+}

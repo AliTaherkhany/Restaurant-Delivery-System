@@ -1,0 +1,347 @@
+@import '../fonts/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css';
+@import '../fonts/bootstrap-icons-1.4.1/bootstrap-icons.css';
+
+@font-face {
+    font-family: 'Niconne';
+    src: url('../fonts/Niconne-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito/Nunito-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'Coiny';
+    src: url('../fonts/Coiny/Coiny-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url('../fonts/Caveat/Caveat-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Courgette';
+    src: url('../fonts/Courgette/Courgette-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Kalam';
+    src: url('../fonts/Kalam/Kalam-Bold.ttf');
+}
+
+// variables
+
+$Niconne: 'Niconne',
+Sans-serif;
+$Nunito: 'Nunito',
+Sans-serif;
+$Coiny: 'Coiny',
+Sans-serif;
+$Caveat: 'Caveat',
+Sans-serif;
+$Courgette: 'Courgette',
+Sans-serif;
+
+$color-dark-1: #1f1d1d;
+$color-dark-2: #2c2c2c;
+$color-dark-3: #034947;
+$color-blue-1: #8dbcf4;
+$color-blue-2: #c0d6e4;
+$color-blue-3: #6c86a4;
+$color-blue-gray-1: #708090;
+$color-blue-gray-2: #536878;
+$color-blue-gray-3: #36454f;
+$color-red: #eb5d78;
+$color-orange-1: #ffd094db;
+$color-pinik: #cf5deb;
+$color-light: #6ad3b0dc;
+$color-info: #17a2b8;
+$color-green-1: #e5ffb4e5;
+$color-green-2: #dcedc1;
+$color-green-3: #98ff98;
+$color-green-4: #d6e9ca;
+
+@mixin flex($var:row){
+    display: flex;
+    flex-direction: $var;
+    justify-content: space-around;
+    align-items: center;
+}
+@mixin width-height{
+    width: 100%;
+    height: 100%;
+}
+
+// main
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+
+    header{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background: url('../images/WallpaperGram.IR_1554973207_95426.jpg'),rgba(black,.2);
+        background-blend-mode: overlay;
+        background-size: 100% 100%;
+
+        nav{
+            @include flex();
+            width: 100%;
+            height: 60px;
+            position: fixed;
+            top: 10px;
+            background: hsla(0,0%,100%,.5);
+            font-family: $Nunito;
+
+            h1{
+                font-size: 40px;
+                color: $color-green-1;
+                font-family: $Courgette;
+            }
+
+            ul{
+
+                li{
+                    display: inline-block;
+                    list-style: none;
+                    margin: 0 10px;
+
+                    a{
+                        @include width-height();
+                        display: inline-block;
+                        position: relative;
+                        color: black;
+                        border-radius: 5px;
+                        padding: 0 7px;
+                        text-decoration: none;
+
+                        &::after{
+                            position: absolute;
+                            content: "";
+                            width: 0;
+                            height: 3px;
+                            left: 0;
+                            bottom: -4px;
+                            background: $color-green-1;
+                            border-radius: 3px;
+                            transition: all .5s;
+                        }
+
+                        &:hover::after{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        section{
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            text-align: center;
+            transform: translateY(-50%);
+            color: white;
+
+            h1{
+                font-family: $Courgette;
+                font-size: 50px;
+                margin: 40px 0;
+            }
+
+            p{
+                font-family: $Niconne;
+                font-size: 30px;
+                margin-bottom: 40px;
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 3px;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background: linear-gradient(to right,white,violet,white);
+                border-radius: 3px;
+                transition: all 1s ease;
+            }
+
+            &:hover{
+
+                &::after{
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    footer{
+        @include flex();
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+        background: $color-dark-2;
+
+        .left{
+            flex-basis: 50%;
+            height: 100%;
+            padding: 40px;
+            
+            textarea{
+                padding: 10px;
+                font-family: $Courgette;
+                font-size: 22px;
+                width: 100%;
+                height: 50%;
+                left: 0;
+                overflow: hidden;
+                border-radius: 10px;
+                resize: none;
+
+                &::placeholder{
+                    opacity: 1;
+                    color: cornflowerblue;
+                }
+            }
+
+            button{
+                padding: 2px 10px;
+                background: cornflowerblue;
+                font-family: $Caveat;
+                font-size: 20px;
+                position: relative;
+                left: calc(100% - 72px);
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+        }
+
+        .right{
+            @include flex(column);
+            @include width-height();
+            flex-basis: 50%;
+            color: white;
+
+            .text,.copyright{
+                margin: 20px 0;
+            }
+            
+            .text{
+                font-family: $Courgette;
+                font-size: 25px;
+            }
+    
+            .media{
+                z-index: 1;
+                
+                div{
+                    position: relative;
+                    display: inline-block;
+                    width: 50px;
+                    height: 50px;
+                    background: white;
+                    color: black;
+                    border-radius: 50%;
+                    margin: 0 10px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+    
+                    &:hover{
+                        color: white;
+    
+                        span{
+                            top: -50%;
+                            opacity: 1;
+                            overflow: visible;
+                        }
+    
+                        &.facebook{
+                            background: #3b5998;
+                        }
+    
+                        &.github{
+                            background: black;
+                        }
+    
+                        &.instagram{
+                            background: #9b1950;
+                        }
+    
+                        &.telegram{
+                            background: #2670ae;
+                        }
+    
+                        &.whatsapp{
+                            background: #257e78;
+                        }
+                    }
+    
+                    i{
+                        @include width-height();
+                        display: inline-block;
+                        position: relative;
+                        font-size: 25px;
+                        line-height: 50px;
+                        text-align: center;
+                    }
+    
+                    span{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        font-family: $Niconne;
+                        font-size: 20px;
+                        padding: 2px 10px;
+                        background: inherit;
+                        border-radius: 100px;
+                        transition: top 0.3s cubic-bezier(.63,.65,.28,1.33),opacity 0.3s cubic-bezier(.63,.65,.28,1.33),overflow 0.3s cubic-bezier(.63,.65,.28,1.33);
+                        z-index: -10;
+                        opacity: 0;
+                        overflow: hidden;
+                        pointer-events: none;
+                        
+                        &::before{
+                            position: absolute;
+                            content: "";
+                            width: 11px;
+                            height: 11px;
+                            bottom: 0;
+                            left: 50%;
+                            background: inherit;
+                            transform: translate(-50%,50%) rotateZ(45deg);
+                        }
+                    }
+                }
+            }
+    
+            .copyright{
+                position: relative;
+                font-family: $Nunito;
+                font-size: 18px;
+                z-index: 2;
+    
+                i{
+                    position: absolute;
+                    top: 53%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    font-size: 120px;
+                    opacity: .2;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
